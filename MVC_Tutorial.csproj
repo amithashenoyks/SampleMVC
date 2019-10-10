@@ -133,6 +133,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Properties\PublishProfiles\MVCTutorial - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\SampleMVCTutorial - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -199,6 +200,7 @@
     <Content Include="Views\Home\CreateUser.cshtml" />
     <Content Include="Views\Shared\_NewLayout.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\ErrorManage\Error.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -208,7 +210,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\ErrorManage\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201909260737162_FirstTableArticle.resx">

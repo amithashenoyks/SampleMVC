@@ -30,19 +30,7 @@ namespace MVC_Tutorial.Controllers
         public ActionResult Index()
         {
 
-            
-
-            db.Configuration.LazyLoadingEnabled = true;
-
-            var ac = (from artcile in db.Articles where artcile.ID > 0 select artcile).FirstOrDefault();
-
-            foreach (var item in ac.Description)
-            {
-                Trace.WriteLine(item.ToString());
-                Trace.Flush();
-            }
-
-            
+           
             //if (HttpContext.Request.Cookies.Count > 1)
             //{
             //    Trace.WriteLine(DateTime.Now);

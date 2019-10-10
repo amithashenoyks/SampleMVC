@@ -20,10 +20,10 @@ namespace MVC_Tutorial
         private int Exceptioncount = 0;
         void Application_Start(object sender, EventArgs e)
         {
-            AppDomain.CurrentDomain.FirstChanceException += (sender1, args) =>
-            {
-                Trace.TraceWarning("Exceptions:{0}", ++Exceptioncount);
-            };
+            //AppDomain.CurrentDomain.FirstChanceException += (sender1, args) =>
+            //{
+            //    Trace.TraceWarning("Exceptions:{0}", ++Exceptioncount);
+            //};
 
 
             // Code that runs on application startup
