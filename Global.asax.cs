@@ -44,47 +44,47 @@ namespace MVC_Tutorial
 
         void Application_Error(object sender, EventArgs e)
         {
-            if (Server != null)
-            {
-                //Get the context
-                HttpContext appContext = ((MVC_Tutorial.Global)sender).Context;
-                Exception ex = Server.GetLastError().GetBaseException();
+            //if (Server != null)
+            //{
+            //    //Get the context
+            //    HttpContext appContext = ((MVC_Tutorial.Global)sender).Context;
+            //    Exception ex = Server.GetLastError().GetBaseException();
 
-                Response.Clear();
-                HttpException exception = new HttpException();
-                //Log the error using the logging framework
+            //    Response.Clear();
+            //    HttpException exception = new HttpException();
+            //    //Log the error using the logging framework
 
-                //  Logger.Error(ex);
-                string action = "";
-                if (exception != null)
-                {
+            //    //  Logger.Error(ex);
+            //    string action = "";
+            //    if (exception != null)
+            //    {
 
 
-                    switch (exception.GetHttpCode())
-                    {
-                        case 404:
-                            // page not found
-                            action = "HttpError404";
-                            break;
-                        //   case 500:
-                        // server error
-                        //    action = "HttpError500";
-                        //   break;
-                        default:
-                            action = "General";
-                            break;
-                    }
-                }
-                //Clear the last error on the server so that custom errors are not fired
-                Server.ClearError();
-                //forward the user to the error manager controller.
-                IController errorController = new ErrorManageController();
-                RouteData routeData = new RouteData();
-                routeData.Values["controller"] = "ErrorManagerController";
-                routeData.Values["action"] = action;
-                errorController.Execute(
-                new RequestContext(new HttpContextWrapper(appContext), routeData));
-            }
+            //        switch (exception.GetHttpCode())
+            //        {
+            //            case 404:
+            //                // page not found
+            //                action = "HttpError404";
+            //                break;
+            //            //   case 500:
+            //            // server error
+            //            //    action = "HttpError500";
+            //            //   break;
+            //            default:
+            //                action = "General";
+            //                break;
+            //        }
+            //    }
+            //    //Clear the last error on the server so that custom errors are not fired
+            //    Server.ClearError();
+            //    //forward the user to the error manager controller.
+            //    IController errorController = new ErrorManageController();
+            //    RouteData routeData = new RouteData();
+            //    routeData.Values["controller"] = "ErrorManagerController";
+            //    routeData.Values["action"] = action;
+            //    errorController.Execute(
+            //    new RequestContext(new HttpContextWrapper(appContext), routeData));
+            //}
         }
     }
 }
