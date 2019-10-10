@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Contact";
+}
+
+<h2>Contact</h2>
+
+<h6>Trace information page</h6>
+
+@using (@Html.BeginForm("Contact", "Home", FormMethod.Post))
+{
+    <table style="float:left">
+        <tr>
+            <td>@Html.Label("name")</td>
+            <td>:</td>
+            <td>@Html.TextBox("txtName")</td>
+        </tr>
+        <tr>
+            <td>@Html.Label("age")</td>
+            <td>:</td>
+            <td>@Html.TextBox("txtAge")</td>
+        </tr>
+        <tr>
+
+            <td><input type="submit" value="Submit" /></td>
+        </tr>
+    </table>
+} 
